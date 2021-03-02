@@ -32,6 +32,7 @@ for i in range(len(text)):
 words = words[:len(words)-1]
 
 ok = 0
+verif = 0
 
 for i in range(len(text)):
     if text[i] == "States":
@@ -47,8 +48,9 @@ for i in range(len(text)):
                 stari_finale.append(var[0])
             if "S" in var and stare_initiala == -1:
                 stare_initiala = var[0]
-            elif "S" in var and stare_initiala != -1:
+            elif "S" in var and stare_initiala != -1 and verif == 0:
                 print("Input-ul este gresit, deoarece nu pot exista mai multe stari initiale")
+                verif = 1
 
         if text[i] == "End":
             break
